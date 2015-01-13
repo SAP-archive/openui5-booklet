@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <script src="https://sapui5.hana.ondemand.com/resources/sap-ui-core.js" 
+      data-sap-ui-libs="sap.m,sap.ui.layout,sap.ui.core" 
+      data-sap-ui-theme="sap_bluecrystal"></script>
+    <script>
+    	var modelJSON = new sap.ui.model.json.JSONModel("http://api.github.com/orgs/SAP");
+	sap.ui.getCore().setModel(modelJSON);
+      	var page1 = new sap.m.Page({ title: "My first OpenUI5 app!",
+		content: [
+	      		new sap.m.Button({
+	      			icon: "{/avatar_url}",
+	      			text: "{/html_url}",
+	      			press: function() {
+	      				alert("First interaction");
+	      			}
+	      		})
+	       	] 
+ 	    });
+ 	var app = new sap.m.App().addPage(page1).placeAt("content");
+    </script>
+  </head>
+  <body id="content" class="sapUiBody"></body>
+</html>

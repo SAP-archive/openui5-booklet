@@ -1,24 +1,24 @@
 <!DOCTYPE HTML>
 <html>
   <head>
-    <script src="https://sapui5.hana.ondemand.com/resources/sap-ui-core.js" 
-      data-sap-ui-libs="sap.m,sap.ui.layout,sap.ui.core" 
+    <script src="https://openui5.hana.ondemand.com/resources/sap-ui-core.js" 
+      data-sap-ui-libs="sap.m" 
       data-sap-ui-theme="sap_bluecrystal"></script>
     <script>
-    	var modelJSON = new sap.ui.model.json.JSONModel("http://api.github.com/orgs/SAP");
-    	sap.ui.getCore().setModel(modelJSON);
+    	var orgData = new sap.ui.model.json.JSONModel("http://api.github.com/orgs/SAP");
+      sap.ui.getCore().setModel(orgData, "org");
     	var page2 = new sap.m.Page("page2", { 
-    	  title: "Details",
+    	  title: "Repositories",
     	  showNavButton: true,
     	  navButtonTap: function(){
     	    app.back();
     	   }
     	 });
-      var page1 = new sap.m.Page({ title: "My first OpenUI5 app!",
+      var page1 = new sap.m.Page("page1", { title: "My first OpenUI5 app!",
     		content: [
     	      		new sap.m.Button({
-    	      			icon: "{/avatar_url}",
-    	      			text: "{/html_url}",
+    	      			icon: "{org>/avatar_url}",
+    	      			text: "{org>/html_url}",
     	      			press: function() {
     	      				app.to("page2");
     	      			}

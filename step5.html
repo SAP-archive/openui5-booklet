@@ -5,8 +5,8 @@
       data-sap-ui-libs="sap.m" 
       data-sap-ui-theme="sap_bluecrystal"></script>
     <script>
-    	var orgData = new sap.ui.model.json.JSONModel("http://api.github.com/orgs/SAP");
-    	var repoData = new sap.ui.model.json.JSONModel("http://api.github.com/orgs/SAP/repos");
+    	var orgData = new sap.ui.model.json.JSONModel("https://api.github.com/orgs/SAP");
+    	var repoData = new sap.ui.model.json.JSONModel("https://api.github.com/orgs/SAP/repos");
       sap.ui.getCore().setModel(repoData, "repos");
       sap.ui.getCore().setModel(orgData, "org");
       

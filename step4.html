@@ -5,7 +5,7 @@
       data-sap-ui-libs="sap.m" 
       data-sap-ui-theme="sap_bluecrystal"></script>
     <script>
-    	var orgData = new sap.ui.model.json.JSONModel("http://api.github.com/orgs/SAP");
+    	var orgData = new sap.ui.model.json.JSONModel("https://api.github.com/orgs/SAP");
       sap.ui.getCore().setModel(orgData, "org");
     	var page2 = new sap.m.Page("page2", { 
     	  title: "Repositories",
